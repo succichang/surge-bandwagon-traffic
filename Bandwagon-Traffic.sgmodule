@@ -1,0 +1,10 @@
+#!name=搬瓦工 VPS 流量
+#!desc=v2.0 使用 GitHub HTTPS 托管脚本。通过 KiwiVM API 显示 VPS 状态、月流量、剩余流量和重置时间。
+#!arguments=VEID:请填写VEID,API_KEY:请填写API_KEY
+#!requirement=CORE_VERSION>=20
+
+[Panel]
+Bandwagon Traffic = title="搬瓦工 VPS",content="点击刷新以查询流量",style=info,script-name=bandwagon-traffic,update-interval=600
+
+[Script]
+bandwagon-traffic = type=generic,script-path=https://raw.githubusercontent.com/succichang/surge-bandwagon-traffic/main/Bandwagon-Traffic.js,argument="VEID={{{VEID}}}&API_KEY={{{API_KEY}}}",timeout=10
